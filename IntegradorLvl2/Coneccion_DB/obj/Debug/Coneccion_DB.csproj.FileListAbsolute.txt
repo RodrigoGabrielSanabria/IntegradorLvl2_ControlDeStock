@@ -1,0 +1,2 @@
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.csproj.AssemblyReference.cache
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.csproj.CoreCompileInputs.cache
