@@ -11,7 +11,7 @@ namespace Coneccion_DB
 {
     public class ArticulosDB
     {
-        public List<Articulos> Listar() 
+        public List<Articulos> Lista() 
         {
             List<Articulos> list = new List<Articulos>();
             SqlConnection conexion = new SqlConnection();
