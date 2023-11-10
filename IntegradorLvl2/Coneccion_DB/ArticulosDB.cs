@@ -35,7 +35,7 @@ namespace Coneccion_DB
 
                 //Cargar Ciclo WHILE para mostrar los datos en el GridView
 
-               //hola como estas?
+               //hola julio
             }
             catch (Exception ex) 
             {
