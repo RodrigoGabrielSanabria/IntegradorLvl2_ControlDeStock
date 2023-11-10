@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\IntegradorLvl2",
+    "\\IntegradorLvl2\\Dominio"
   ],
+  "SelectedNode": "\\IntegradorLvl2\\Dominio\\Marcas.cs",
   "PreviewInSolutionExplorer": false
 }
