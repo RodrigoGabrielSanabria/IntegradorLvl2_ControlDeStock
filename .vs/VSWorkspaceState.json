@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\IntegradorLvl2",
-    "\\IntegradorLvl2\\Dominio"
+    "\\IntegradorLvl2\\Coneccion_DB",
+    "\\IntegradorLvl2\\Dominio",
+    "\\IntegradorLvl2\\WinApp"
   ],
-  "SelectedNode": "\\IntegradorLvl2\\Dominio\\Marcas.cs",
+  "SelectedNode": "\\IntegradorLvl2\\Coneccion_DB\\Coneccion_DB.csproj",
   "PreviewInSolutionExplorer": false
 }

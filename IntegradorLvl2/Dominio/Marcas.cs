@@ -11,7 +11,12 @@ namespace Dominio
         public int Id { get; set; }
 
         public string Descripcion { get; set; }
-    }
-}
 
-//hola rodrigo - by julyArocha
+        public override string ToString()
+        {
+            return Descripcion;
+        }
+
+    }
+
+}

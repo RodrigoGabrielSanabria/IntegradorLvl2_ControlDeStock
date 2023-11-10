@@ -11,7 +11,7 @@ namespace Coneccion_DB
 {
     public class ArticulosDB
     {
-        public List<Articulos> Lista() 
+        public List<Articulos> Listar() 
         {
             List<Articulos> list = new List<Articulos>();
             SqlConnection conexion = new SqlConnection();
@@ -24,9 +24,8 @@ namespace Coneccion_DB
 
                 comando.CommandType = System.Data.CommandType.Text;
 
-                comando.CommandText = ""; //Insertar consulta
-
-
+                comando.CommandText = "SELECT Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, ImagenUrl,Precio from dbo.ARTICULOS A, DBO.CATEGORIAS C, DBO.MARCAS M where M.Id=A.IdMarca and C.Id=A.IdCategoria"; //Insertar consulta
+                
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -34,14 +33,36 @@ namespace Coneccion_DB
                 lector = comando.ExecuteReader();
 
                 //Cargar Ciclo WHILE para mostrar los datos en el GridView
+                while (lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.CodigoArticulo = lector.GetString(0);
+                    aux.Nombre = lector.GetString(1);
+                    aux.Descripcion = lector.GetString(2);
+                    aux.Marca = new Marca();
+                    aux.Marca.Descripcion = lector.GetString(3);
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = lector.GetString(4);
+                    aux.Imagen = lector.GetString(5);
+                    double precio;
+                    if (double.TryParse(lector["Precio"].ToString(), out precio))
+                    {
+                        aux.Precio = precio;
+                    }
 
-               //Cerrar 
+                    list.Add(aux);
+                }
+                conexion.Close();
+                return list;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
 
                 throw ex;
             }
+            //Cerrar 
+        }
+            
         }
     }
 }
