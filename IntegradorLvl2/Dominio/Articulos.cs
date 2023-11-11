@@ -9,7 +9,7 @@ namespace Dominio
 {
     public class Articulos
     {
-        public int CodigoArticulo { get; set; }
+        public string CodigoArticulo { get; set; }
 
         public string Nombre { get; set; }
 
@@ -19,7 +19,7 @@ namespace Dominio
 
         public Categorias Categorias { get; set; }
 
-        public string ImangenURL { get; set; }
+        public string ImagenURL { get; set; }
 
         public double Precio { get; set; }
 

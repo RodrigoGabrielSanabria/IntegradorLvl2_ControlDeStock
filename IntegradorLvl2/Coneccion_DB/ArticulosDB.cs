@@ -35,15 +35,15 @@ namespace Coneccion_DB
                 //Cargar Ciclo WHILE para mostrar los datos en el GridView
                 while (lector.Read())
                 {
-                    Articulo aux = new Articulo();
+                    Articulos aux = new Articulos();
                     aux.CodigoArticulo = lector.GetString(0);
                     aux.Nombre = lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
-                    aux.Marca = new Marca();
-                    aux.Marca.Descripcion = lector.GetString(3);
-                    aux.Categoria = new Categoria();
-                    aux.Categoria.Descripcion = lector.GetString(4);
-                    aux.Imagen = lector.GetString(5);
+                    aux.Marcas = new Marcas();
+                    aux.Marcas.Descripcion = lector.GetString(3);
+                    aux.Categorias = new Categorias();
+                    aux.Categorias.Descripcion = lector.GetString(4);
+                    aux.ImagenURL = lector.GetString(5);
                     double precio;
                     if (double.TryParse(lector["Precio"].ToString(), out precio))
                     {
@@ -52,9 +52,12 @@ namespace Coneccion_DB
 
                     list.Add(aux);
                 }
+
                 conexion.Close();
                 return list;
+
             }
+
             catch (Exception ex)
             {
 
@@ -63,6 +66,7 @@ namespace Coneccion_DB
             //Cerrar 
         }
             
-        }
+ 
+    
     }
 }
