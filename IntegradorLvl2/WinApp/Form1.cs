@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace WinApp
 {
-    public partial class Form1 : Form
+    public partial class FormArticulos : Form
     {
-        public Form1()
+        public FormArticulos()
         {
             InitializeComponent();
         }
@@ -51,6 +51,14 @@ namespace WinApp
 
                 pbxArticulo.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            Agregar_Articulo nuevo = new Agregar_Articulo();
+
+            nuevo.ShowDialog();
         }
     }
 }
