@@ -18,6 +18,7 @@ namespace Coneccion_DB
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
 
+            //Conexion y lectura de DB
             try
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS;database=CATALOGO_DB;integrated security=true";
@@ -32,7 +33,7 @@ namespace Coneccion_DB
 
                 lector = comando.ExecuteReader();
 
-                //Cargar Ciclo WHILE para mostrar los datos en el GridView
+                //Ciclo WHILE para mostrar los datos en el GridView
                 while (lector.Read())
                 {
                     Articulos aux = new Articulos();
@@ -65,7 +66,10 @@ namespace Coneccion_DB
             }
             //Cerrar 
         }
-            
+
+        public void AgregarArticulo(Articulos nuevo) { }
+
+        public void ModificarArticulo(Articulos modificar) { }
  
     
     }
