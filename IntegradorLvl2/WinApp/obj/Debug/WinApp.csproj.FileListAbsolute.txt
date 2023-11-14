@@ -6,10 +6,10 @@ D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\Integrador
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\Coneccion_DB.pdb
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\Dominio.pdb
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.AssemblyReference.cache
-D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Form1.resources
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Properties.Resources.resources
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.GenerateResource.cache
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.CoreCompileInputs.cache
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.CopyComplete
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.exe
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.pdb
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.FormArticulos.resources
