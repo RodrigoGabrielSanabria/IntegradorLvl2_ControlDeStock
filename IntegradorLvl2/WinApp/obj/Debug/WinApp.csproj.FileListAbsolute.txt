@@ -29,3 +29,4 @@ E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp
 E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.CopyComplete
 E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.exe
 E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.pdb
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Agregar_Articulo.resources
