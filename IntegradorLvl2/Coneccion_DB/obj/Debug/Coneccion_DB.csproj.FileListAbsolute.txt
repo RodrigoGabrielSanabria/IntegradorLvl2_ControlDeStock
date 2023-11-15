@@ -7,3 +7,12 @@ D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\Integrador
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.csproj.CopyComplete
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.dll
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Coneccion_DB.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Coneccion_DB.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Dominio.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Dominio.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.csproj.AssemblyReference.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.csproj.CoreCompileInputs.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.csproj.CopyComplete
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.pdb

@@ -13,3 +13,19 @@ D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\Integrador
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.exe
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.pdb
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.FormArticulos.resources
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\WinApp.exe.config
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\WinApp.exe
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\WinApp.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\Coneccion_DB.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\Dominio.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\Coneccion_DB.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\Dominio.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.AssemblyReference.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Agregar_Articulo.resources
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.FormArticulos.resources
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Properties.Resources.resources
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.GenerateResource.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.CoreCompileInputs.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.csproj.CopyComplete
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.exe
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.pdb
