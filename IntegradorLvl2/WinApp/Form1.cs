@@ -1,4 +1,4 @@
-﻿using Coneccion_DB;
+﻿using Conexion_DB;
 using Dominio;
 using System;
 using System.Collections.Generic;
@@ -17,6 +17,8 @@ namespace WinApp
         public FormArticulos()
         {
             InitializeComponent();
+
+           
         }
 
         private List<Articulos> listadoArticulo;
@@ -36,6 +38,7 @@ namespace WinApp
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
             Articulos seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+
             cargarImagen(seleccionado.ImagenURL);
         }
 
@@ -59,6 +62,18 @@ namespace WinApp
             Agregar_Articulo nuevo = new Agregar_Articulo();
 
             nuevo.ShowDialog();
+        }
+
+       
+        //Cargar codigo para barra de progreso
+        private void tsBarraProgreso_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripStatusLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
