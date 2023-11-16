@@ -89,9 +89,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Coneccion_DB\Coneccion_DB.csproj">
+    <ProjectReference Include="..\Coneccion_DB\Conexion_DB.csproj">
       <Project>{c991d077-10d7-4a57-bcf2-d17e5993857c}</Project>
-      <Name>Coneccion_DB</Name>
+      <Name>Conexion_DB</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
       <Project>{f898c8c8-3660-4eae-9a59-b61221995e5d}</Project>

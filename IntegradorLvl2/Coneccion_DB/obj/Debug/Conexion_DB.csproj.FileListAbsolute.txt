@@ -1,0 +1,9 @@
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Coneccion_DB.dll
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Coneccion_DB.pdb
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Dominio.dll
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\bin\Debug\Dominio.pdb
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Conexion_DB.csproj.AssemblyReference.cache
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Conexion_DB.csproj.CoreCompileInputs.cache
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Conexion_DB.csproj.CopyComplete
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.dll
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Coneccion_DB\obj\Debug\Coneccion_DB.pdb
