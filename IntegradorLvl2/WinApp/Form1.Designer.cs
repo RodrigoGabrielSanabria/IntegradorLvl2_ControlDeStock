@@ -85,7 +85,7 @@
             this.pbxArticulo.Location = new System.Drawing.Point(1028, 94);
             this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(323, 323);
+            this.pbxArticulo.Size = new System.Drawing.Size(323, 322);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 1;
             this.pbxArticulo.TabStop = false;
@@ -139,7 +139,8 @@
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1390, 32);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(1390, 36);
             this.menuStrip.TabIndex = 5;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -154,7 +155,7 @@
             this.exitToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(87, 26);
+            this.fileMenu.Size = new System.Drawing.Size(87, 32);
             this.fileMenu.Text = "&Archivo";
             // 
             // newToolStripMenuItem
@@ -209,7 +210,7 @@
             this.toolStripSeparator7,
             this.selectAllToolStripMenuItem});
             this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(74, 26);
+            this.editMenu.Size = new System.Drawing.Size(74, 32);
             this.editMenu.Text = "&Editar";
             // 
             // cutToolStripMenuItem
@@ -257,7 +258,7 @@
             this.toolBarToolStripMenuItem,
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(53, 26);
+            this.viewMenu.Size = new System.Drawing.Size(53, 32);
             this.viewMenu.Text = "&Ver";
             // 
             // toolBarToolStripMenuItem
@@ -283,7 +284,7 @@
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
-            this.toolsMenu.Size = new System.Drawing.Size(135, 26);
+            this.toolsMenu.Size = new System.Drawing.Size(135, 32);
             this.toolsMenu.Text = "&Herramientas";
             // 
             // optionsToolStripMenuItem
@@ -297,7 +298,7 @@
             this.helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpMenu.Name = "helpMenu";
-            this.helpMenu.Size = new System.Drawing.Size(77, 26);
+            this.helpMenu.Size = new System.Drawing.Size(77, 32);
             this.helpMenu.Text = "Ay&uda";
             // 
             // aboutToolStripMenuItem
@@ -313,31 +314,32 @@
             this.toolStripStatusLabel,
             this.toolStripStatusLabel1,
             this.toolStripProgressBar1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 606);
+            this.statusStrip.Location = new System.Drawing.Point(0, 592);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1390, 32);
+            this.statusStrip.Size = new System.Drawing.Size(1390, 46);
             this.statusStrip.TabIndex = 6;
             this.statusStrip.Text = "StatusStrip";
             // 
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(70, 25);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(70, 39);
             this.toolStripStatusLabel.Text = "Estado:";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.ForestGreen;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(98, 25);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(98, 39);
             this.toolStripStatusLabel1.Text = "Conectado";
             // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Margin = new System.Windows.Forms.Padding(633, 3, 1, 3);
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(150, 26);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(150, 40);
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // FormArticulos
             // 
