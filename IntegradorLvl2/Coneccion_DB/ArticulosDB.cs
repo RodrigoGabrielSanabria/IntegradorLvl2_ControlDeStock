@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
 
-namespace Coneccion_DB
+namespace Conexion_DB
 {
     public class ArticulosDB
     {
@@ -46,6 +46,7 @@ namespace Coneccion_DB
                     aux.Categorias.Descripcion = lector.GetString(4);
                     aux.ImagenURL = lector.GetString(5);
                     double precio;
+
                     if (double.TryParse(lector["Precio"].ToString(), out precio))
                     {
                         aux.Precio = precio;
@@ -67,7 +68,32 @@ namespace Coneccion_DB
             //Cerrar 
         }
 
-        public void AgregarArticulo(Articulos nuevo) { }
+        public void AgregarArticulo(Articulos nuevo) 
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values('" + nuevo.CodigoArticulo + "','" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.Precio +")");
+
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            { 
+            
+                datos.CerrarConexion();
+
+            }
+        
+        
+        
+        
+        }
 
         public void ModificarArticulo(Articulos modificar) { }
  
