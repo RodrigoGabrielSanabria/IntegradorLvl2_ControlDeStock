@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Coneccion_DB
+
+namespace Conexion_DB
 {
     public class CategoriasDB
     {
@@ -22,7 +23,7 @@ namespace Coneccion_DB
             try
             {
 
-                datos.SetearConsulta("Select Id, Descripcion From categorias");
+                datos.SetearConsulta("Select Id, Descripcion From CATEGORIAS");
 
                 datos.EjecutarLectura();
 
@@ -32,7 +33,7 @@ namespace Coneccion_DB
                     
                     aux.Id = (int)datos.Lector["Id"];
 
-                    aux.Descripcion = (string)datos.Lector["Description"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                 
                     list.Add(aux);
                 }
