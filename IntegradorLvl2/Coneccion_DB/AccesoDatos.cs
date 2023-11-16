@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
 
-namespace Coneccion_DB
+namespace Conexion_DB
 {
     public class AccesoDatos
     {
@@ -71,6 +71,28 @@ namespace Coneccion_DB
                 lector.Close();
                 conexion.Close();
             }
+        }
+
+        //Metodo para ejecutar el añadido de un nuevo articulo
+        public void EjecutarAccion () 
+        {
+
+            comando.Connection= conexion;
+
+            try
+            {
+
+                conexion.Open();
+
+               comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        
         }
 
     }
