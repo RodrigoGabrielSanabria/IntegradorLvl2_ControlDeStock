@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Conexion_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,45 +11,54 @@ using System.Windows.Forms;
 
 namespace WinApp
 {
-    public partial class Login : Form
+    public partial class LogIn : Form
     {
-        public Login()
+        public LogIn()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string sPass = textPassword.Text;
-            using (models.CATALOGO_DBEntities db = new models.CATALOGO_DBEntities())
+            string usuario = txtUsuario.Text;
+            string contrasena = txtContraseña.Text;
+
+            AccesoDatos accesoDatos = new AccesoDatos();
+
+            try
             {
-                var lst = from d in db.Users
-                          where d.user == textUser.Text
-                          && d.password == sPass
-                          select d;
-                if(lst.Count()>0)
+                if (accesoDatos.VerificarCredenciales(usuario, contrasena))
                 {
+                    MessageBox.Show("Inicio de sesión exitoso", "¡Bienvenido!");
+
+                    // Cierra la ventana actual (LogIn)
+
                     this.Hide();
-                    Form frm=new Form();
-                    frm.FormClosed += (s, args) => this.Close();
-                    frm.Show();
+
+                    // Abre el formulario FormArticulos
+
+                    FormArticulos formArticulos = new FormArticulos();
+
+                    formArticulos.Show();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo iniciar sesion");
+                    MessageBox.Show("Error de inicio de sesión", "Credenciales incorrectas");
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error de inicio de sesión");
+            }
+            finally
+            {
+                accesoDatos.CerrarConexion();
+            }
         }
     }
 }
