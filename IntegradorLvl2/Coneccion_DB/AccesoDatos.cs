@@ -95,5 +95,28 @@ namespace Conexion_DB
         
         }
 
+        // Método para verificar las credenciales
+        public bool VerificarCredenciales(string usuario, string contrasena)
+        {
+            try
+            {
+                // Reemplaza "NombreTabla" y "CampoUsuario" y "CampoContrasena" con los nombres reales de tu tabla y columnas.
+                string consulta = $"SELECT Usuario, Contrasena FROM Users WHERE Usuario = '{usuario}' AND Contrasena = '{contrasena}'";
+                SetearConsulta(consulta);
+                EjecutarLectura();
+
+                // Si el lector tiene alguna fila, entonces las credenciales son correctas.
+                return lector.HasRows;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
     }
 }
