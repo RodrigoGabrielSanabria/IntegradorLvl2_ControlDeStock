@@ -35,3 +35,8 @@ E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp
 E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.SqlServer.dll
 E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.xml
 E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.dll
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.xml
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Login.resources
