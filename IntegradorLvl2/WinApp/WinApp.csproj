@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +61,40 @@
     <Compile Include="Agregar Articulo.Designer.cs">
       <DependentUpon>Agregar Articulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="CATALOGO_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CATALOGO_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Datauserss.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datauserss.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Datauserss.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datauserss.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Datauserss.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datauserss.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="models\Users.cs">
+      <DependentUpon>Datauserss.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +116,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CATALOGO_DBDataSet.xsc">
+      <DependentUpon>CATALOGO_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CATALOGO_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CATALOGO_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CATALOGO_DBDataSet.xss">
+      <DependentUpon>CATALOGO_DBDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="models\Datauserss.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Datauserss.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="models\Datauserss.edmx.diagram">
+      <DependentUpon>Datauserss.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +157,21 @@
       <Project>{f898c8c8-3660-4eae-9a59-b61221995e5d}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="models\Datauserss.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Datauserss.Context.cs</LastGenOutput>
+      <DependentUpon>Datauserss.edmx</DependentUpon>
+    </Content>
+    <Content Include="models\Datauserss.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Datauserss.edmx</DependentUpon>
+      <LastGenOutput>Datauserss.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
