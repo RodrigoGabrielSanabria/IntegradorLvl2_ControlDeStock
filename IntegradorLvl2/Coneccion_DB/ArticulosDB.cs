@@ -25,7 +25,7 @@ namespace Conexion_DB
 
                 comando.CommandType = System.Data.CommandType.Text;
 
-                comando.CommandText = "SELECT Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, ImagenUrl,Precio from dbo.ARTICULOS A, DBO.CATEGORIAS C, DBO.MARCAS M where M.Id=A.IdMarca and C.Id=A.IdCategoria"; //Insertar consulta
+                comando.CommandText = "SELECT Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, ImagenUrl,Precio from dbo.ARTICULOS A, dbo.categorias C, dbo.marcas M where M.Id=A.IdMarca and C.Id=A.IdCategoria"; //Insertar consulta
                 
                 comando.Connection = conexion;
 
