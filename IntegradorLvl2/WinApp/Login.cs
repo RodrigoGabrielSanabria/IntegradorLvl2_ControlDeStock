@@ -22,6 +22,14 @@ namespace WinApp
         {
             this.Close();
         }
+        private void txtContraseña_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;//elimina el sonido
+                btnIngresar_Click(sender, e);//llama al evento click del boton
+            }
+        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -34,7 +42,7 @@ namespace WinApp
             {
                 if (accesoDatos.VerificarCredenciales(usuario, contrasena))
                 {
-                    MessageBox.Show("Inicio de sesión exitoso", "¡Bienvenido!");
+                    //MessageBox.Show("Inicio de sesión exitoso", "¡Bienvenido!");
 
                     // Cierra la ventana actual (LogIn)
 
