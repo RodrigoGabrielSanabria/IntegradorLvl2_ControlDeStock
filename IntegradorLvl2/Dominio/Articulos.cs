@@ -14,12 +14,14 @@ namespace Dominio
         public string CodigoArticulo { get; set; }
 
         public string Nombre { get; set; }
+
         [DisplayName ("Descripción")]//se utiliza para visualizar el acento o para mostrar
-                                     //mas de una palabra o separaciones etc
+                                    //mas de una palabra o separaciones etc
         public string Descripcion { get; set; }
 
         public Marcas Marcas { get; set; }
 
+        [DisplayName("Categorías")] 
         public Categorias Categorias { get; set; }
 
         public string ImagenURL { get; set; }
