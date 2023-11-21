@@ -67,7 +67,7 @@ namespace Conexion_DB
 
                 throw ex;
             }
-            //Cerrar 
+          
         }
 
         public void AgregarArticulo(Articulos nuevo) 
@@ -76,9 +76,10 @@ namespace Conexion_DB
 
             try
             {
-                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values('" + nuevo.CodigoArticulo + "','" + nuevo.Nombre + "', '" + nuevo.Descripcion + ",@idMarca, @idCategoria " + nuevo.Precio +" )");
-                datos.setearParametro("@idMarca", nuevo.Marcas.Id);
-                datos.setearParametro("@idCategoria", nuevo.Categorias.Id);
+                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, '" + nuevo.Precio +"', @ImagenUrl )");
+                datos.setearParametro("@IdMarca", nuevo.Marcas.Id);
+                datos.setearParametro("@IdCategoria", nuevo.Categorias.Id);
+                datos.setearParametro("@ImagenUrl", nuevo.ImagenURL);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
