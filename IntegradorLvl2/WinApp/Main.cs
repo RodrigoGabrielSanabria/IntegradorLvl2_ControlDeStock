@@ -20,13 +20,13 @@ namespace WinApp
 
            
         }
-
-        private List<Articulos> listadoArticulo;
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormArticulos_Load(object sender, EventArgs e)
         {
             Cargar();
-
         }
+
+        private List<Articulos> listadoArticulo;
+        
         private void Cargar()
         {
             ArticulosDB articulosDB = new ArticulosDB();
@@ -87,5 +87,7 @@ namespace WinApp
         {
 
         }
+
+        
     }
 }
