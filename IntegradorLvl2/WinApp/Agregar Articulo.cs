@@ -69,6 +69,8 @@ namespace WinApp
 
                 nuevoArt.Marcas = (Marcas)cmbMarca.SelectedItem;  
 
+                nuevoArt.ImagenURL =txbURLimagen.Text;
+
 
                 //Llama al metodo creado en ArticulosDB 
 
@@ -102,5 +104,7 @@ namespace WinApp
                 pbxPrevia.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
             }
         }
+
+        
     }
 }
