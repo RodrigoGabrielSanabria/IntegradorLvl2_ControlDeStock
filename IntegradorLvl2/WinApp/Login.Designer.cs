@@ -38,33 +38,37 @@
             // 
             // lblUsuario
             // 
+            this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(172, 72);
+            this.lblUsuario.Location = new System.Drawing.Point(172, 41);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(64, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(96, 29);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
             // lblContraseña
             // 
+            this.lblContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(172, 130);
+            this.lblContraseña.Location = new System.Drawing.Point(172, 105);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(99, 20);
+            this.lblContraseña.Size = new System.Drawing.Size(146, 32);
             this.lblContraseña.TabIndex = 1;
             this.lblContraseña.Text = "Contraseña";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(176, 95);
+            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUsuario.Location = new System.Drawing.Point(177, 73);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(186, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(176, 153);
+            this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtContraseña.Location = new System.Drawing.Point(176, 140);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(186, 20);
@@ -73,9 +77,10 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnIngresar.Location = new System.Drawing.Point(72, 209);
+            this.btnIngresar.Location = new System.Drawing.Point(82, 209);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(132, 41);
             this.btnIngresar.TabIndex = 4;
@@ -85,9 +90,10 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(230, 209);
+            this.btnCancelar.Location = new System.Drawing.Point(250, 209);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(132, 41);
             this.btnCancelar.TabIndex = 5;

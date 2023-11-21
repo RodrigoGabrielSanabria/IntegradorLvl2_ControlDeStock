@@ -196,8 +196,9 @@
             // pbxPrevia
             // 
             this.pbxPrevia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxPrevia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxPrevia.Enabled = false;
-            this.pbxPrevia.Location = new System.Drawing.Point(264, 40);
+            this.pbxPrevia.Location = new System.Drawing.Point(264, 41);
             this.pbxPrevia.Name = "pbxPrevia";
             this.pbxPrevia.Size = new System.Drawing.Size(206, 253);
             this.pbxPrevia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -206,11 +207,12 @@
             // 
             // LblVistaPrevia
             // 
+            this.LblVistaPrevia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblVistaPrevia.AutoSize = true;
             this.LblVistaPrevia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVistaPrevia.Location = new System.Drawing.Point(301, 12);
+            this.LblVistaPrevia.Location = new System.Drawing.Point(271, 1);
             this.LblVistaPrevia.Name = "LblVistaPrevia";
-            this.LblVistaPrevia.Size = new System.Drawing.Size(139, 25);
+            this.LblVistaPrevia.Size = new System.Drawing.Size(199, 37);
             this.LblVistaPrevia.TabIndex = 16;
             this.LblVistaPrevia.Text = "Vista Previa";
             this.LblVistaPrevia.UseMnemonic = false;
