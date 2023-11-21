@@ -85,6 +85,22 @@ namespace WinApp
             }
         }
 
-        
+        private void txbURLimagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txbURLimagen.Text);
+        }
+        private void cargarImagen(string ImagenURL)
+        {
+
+            try
+            {
+                pbxPrevia.Load(ImagenURL);
+            }
+            catch (Exception)
+            {
+
+                pbxPrevia.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
+            }
+        }
     }
 }
