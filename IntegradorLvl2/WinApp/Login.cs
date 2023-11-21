@@ -42,7 +42,7 @@ namespace WinApp
             {
                 if (accesoDatos.VerificarCredenciales(usuario, contrasena))
                 {
-                    //MessageBox.Show("Inicio de sesión exitoso", "¡Bienvenido!");
+                    MessageBox.Show("Inicio de sesión exitoso", "¡Bienvenido!");
 
                     // Cierra la ventana actual (LogIn)
 
