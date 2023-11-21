@@ -44,7 +44,9 @@ namespace Conexion_DB
                     aux.Marcas.Descripcion = lector.GetString(3);
                     aux.Categorias = new Categorias();
                     aux.Categorias.Descripcion = lector.GetString(4);
-                    aux.ImagenURL = lector.GetString(5);
+                    if(!(lector["ImagenURL"] is DBNull)) //Se utiliza para hacer una comprobacion
+                    aux.ImagenURL = lector.GetString(5); //Para saber si el valor es nulo
+
                     double precio;
 
                     if (double.TryParse(lector["Precio"].ToString(), out precio))
@@ -74,8 +76,9 @@ namespace Conexion_DB
 
             try
             {
-                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, Precio) values('" + nuevo.CodigoArticulo + "','" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.Precio +")");
-
+                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values('" + nuevo.CodigoArticulo + "','" + nuevo.Nombre + "', '" + nuevo.Descripcion + ",@idMarca, @idCategoria " + nuevo.Precio +" )");
+                datos.setearParametro("@idMarca", nuevo.Marcas.Id);
+                datos.setearParametro("@idCategoria", nuevo.Categorias.Id);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
