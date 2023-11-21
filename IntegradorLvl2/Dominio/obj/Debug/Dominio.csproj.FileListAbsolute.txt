@@ -4,3 +4,9 @@ D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\Integrador
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.dll
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\bin\Debug\Dominio.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\bin\Debug\Dominio.pdb
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.dll
+E:\programacion virasoro\Git\IntegradorLvl2_ControlDeStock\IntegradorLvl2\Dominio\obj\Debug\Dominio.pdb

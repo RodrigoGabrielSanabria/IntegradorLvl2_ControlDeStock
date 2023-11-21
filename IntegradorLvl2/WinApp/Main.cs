@@ -24,16 +24,26 @@ namespace WinApp
         private List<Articulos> listadoArticulo;
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticulosDB articulosDB = new ArticulosDB();
-
-            listadoArticulo = articulosDB.Listar();
-
-            dgvArticulo.DataSource = listadoArticulo;
-
-            dgvArticulo.Columns["ImagenURL"].Visible = false;
-            cargarImagen(listadoArticulo[0].ImagenURL);
+            Cargar();
 
         }
+        private void Cargar()
+        {
+            ArticulosDB articulosDB = new ArticulosDB();
+            try
+            {
+                listadoArticulo = articulosDB.Listar();
+                dgvArticulo.DataSource = listadoArticulo;
+                dgvArticulo.Columns["ImagenURL"].Visible = false;
+                cargarImagen(listadoArticulo[0].ImagenURL);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
@@ -62,6 +72,8 @@ namespace WinApp
             Agregar_Articulo nuevo = new Agregar_Articulo();
 
             nuevo.ShowDialog();
+
+            Cargar();
         }
 
        

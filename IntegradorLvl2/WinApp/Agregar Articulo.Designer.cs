@@ -84,7 +84,7 @@
             // 
             this.txbCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txbCodigo.Location = new System.Drawing.Point(111, 38);
-            this.txbCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txbCodigo.Name = "txbCodigo";
             this.txbCodigo.Size = new System.Drawing.Size(114, 20);
             this.txbCodigo.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             this.txbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txbNombre.Location = new System.Drawing.Point(111, 77);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(114, 20);
             this.txbNombre.TabIndex = 1;
@@ -102,7 +102,7 @@
             // 
             this.txbDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txbDescripcion.Location = new System.Drawing.Point(111, 116);
-            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(114, 20);
             this.txbDescripcion.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.btnAceptar.ForeColor = System.Drawing.Color.DarkGreen;
             this.btnAceptar.Location = new System.Drawing.Point(264, 329);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(79, 22);
             this.btnAceptar.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
             this.btnCancelar.Location = new System.Drawing.Point(392, 329);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 22);
             this.btnCancelar.TabIndex = 8;
@@ -135,7 +135,7 @@
             // 
             this.txbPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txbPrecio.Location = new System.Drawing.Point(111, 189);
-            this.txbPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txbPrecio.Name = "txbPrecio";
             this.txbPrecio.Size = new System.Drawing.Size(114, 20);
             this.txbPrecio.TabIndex = 4;
@@ -176,7 +176,7 @@
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(111, 228);
-            this.cmbMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMarca.MaxDropDownItems = 20;
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(114, 21);
@@ -187,7 +187,7 @@
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(111, 272);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.MaxDropDownItems = 20;
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(114, 21);
@@ -195,9 +195,12 @@
             // 
             // pbxPrevia
             // 
+            this.pbxPrevia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxPrevia.Enabled = false;
             this.pbxPrevia.Location = new System.Drawing.Point(264, 40);
             this.pbxPrevia.Name = "pbxPrevia";
             this.pbxPrevia.Size = new System.Drawing.Size(206, 253);
+            this.pbxPrevia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPrevia.TabIndex = 16;
             this.pbxPrevia.TabStop = false;
             // 
@@ -255,7 +258,7 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Agregar_Articulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Agregar_Articulo_Load);
