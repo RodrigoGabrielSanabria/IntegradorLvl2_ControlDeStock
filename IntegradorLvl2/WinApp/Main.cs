@@ -17,9 +17,10 @@ namespace WinApp
         public FormArticulos()
         {
             InitializeComponent();
-
            
         }
+
+       
         private void FormArticulos_Load(object sender, EventArgs e)
         {
             Cargar();
@@ -35,6 +36,7 @@ namespace WinApp
                 listadoArticulo = articulosDB.Listar();
                 dgvArticulo.DataSource = listadoArticulo;
                 dgvArticulo.Columns["ImagenURL"].Visible = false;
+                dgvArticulo.Columns["Id"].Visible = false;
                 cargarImagen(listadoArticulo[0].ImagenURL);
             }
             catch(Exception ex)
@@ -88,6 +90,21 @@ namespace WinApp
 
         }
 
-        
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulos seleccionado;
+
+            seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+
+            //Contructor que recibe un articulo
+            Agregar_Articulo modificar = new Agregar_Articulo(seleccionado);
+
+            modificar.ShowDialog();
+
+            Cargar();
+
+        }
+
+       
     }
 }
