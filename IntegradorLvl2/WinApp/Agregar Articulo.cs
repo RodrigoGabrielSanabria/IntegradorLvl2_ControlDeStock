@@ -14,10 +14,24 @@ namespace WinApp
 {
     public partial class Agregar_Articulo : Form
     {
+        private Articulos articulos = null;
+
         public Agregar_Articulo()
         {
             InitializeComponent();
         }
+
+        //Constructor 
+        public Agregar_Articulo(Articulos articulos)
+        {
+            InitializeComponent();
+
+            this.articulos=articulos;
+
+            Text = "Modificar Artículo";
+        }
+
+       
 
         //Carga la lista de opciones en el desplegable
         private void Agregar_Articulo_Load(object sender, EventArgs e)
@@ -29,9 +43,34 @@ namespace WinApp
             {
 
                 cmbCategoria.DataSource = agregarCategoria.Listar();
-
+               
+                //Nombres de las propiedades de la clase Categoria y Marca
+                cmbCategoria.ValueMember = "Id";
+                cmbCategoria.DisplayMember = "Descripcion";
+                 
+                
                 cmbMarca.DataSource = agregarMarca.Listar();
 
+                //Propiedades de Marca
+                cmbMarca.ValueMember = "Id";
+                cmbMarca.DisplayMember = "Descripcion";
+
+                //Precarga los datos del articulo seleccionado reutilizando el formulario Agregar Articulo
+                if (articulos != null)
+                {
+
+                    txbCodigo.Text = articulos.CodigoArticulo;
+                    txbNombre.Text = articulos.Nombre;
+                    txbDescripcion.Text = articulos.Descripcion;
+                    txbURLimagen.Text = articulos.ImagenURL;
+                    txbPrecio.Text = articulos.Precio.ToString();
+
+                    cargarImagen(articulos.ImagenURL);
+
+                    //Pre seleccionar opciones de los desplegables del articulo seleccionado
+                    cmbCategoria.SelectedValue = articulos.Categorias.Id;
+                    cmbMarca.SelectedValue = articulos.Marcas.Id;
+                }
             }
             catch (Exception ex)
             {
@@ -50,34 +89,51 @@ namespace WinApp
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            Articulos nuevoArt = new Articulos();
+            //Articulos nuevoArt = new Articulos();
 
-            ArticulosDB articulo = new ArticulosDB(); 
+            ArticulosDB articulo = new ArticulosDB();
 
             try
             {
-                    //Carga los datos ingresados en los texbox            
-                nuevoArt.CodigoArticulo = txbCodigo.Text;
+                //Uso de de la clase privada articulos. Mapea los datos para agregar y modificar
+                //Carga los datos ingresados en los texbox            
 
-                nuevoArt.Nombre = txbNombre.Text;
+                if (articulos == null)
+                    articulos = new Articulos(); //Si esta en nulo, se agrega un nuevo articulo
 
-                nuevoArt.Descripcion = txbDescripcion.Text; 
+                articulos.CodigoArticulo = txbCodigo.Text;
 
-                nuevoArt.Precio = double.Parse(txbPrecio.Text);
+                articulos.Nombre = txbNombre.Text;
 
-                nuevoArt.Categorias = (Categorias)cmbCategoria.SelectedItem;
+                articulos.Descripcion = txbDescripcion.Text;
 
-                nuevoArt.Marcas = (Marcas)cmbMarca.SelectedItem;  
+                articulos.Precio = double.Parse(txbPrecio.Text);
 
-                nuevoArt.ImagenURL =txbURLimagen.Text;
+                articulos.Categorias = (Categorias)cmbCategoria.SelectedItem;
+
+                articulos.Marcas = (Marcas)cmbMarca.SelectedItem;
+
+                articulos.ImagenURL = txbURLimagen.Text;
 
 
                 //Llama al metodo creado en ArticulosDB 
 
-                articulo.AgregarArticulo(nuevoArt);
+                if (articulos.Id != 0)
+                {
 
-                MessageBox.Show("Agregado Exitosamente");
+                    articulo.ModificarArticulo(articulos);
 
+                    MessageBox.Show("Modificado Exitosamente");
+
+                }
+                else
+                {
+                    articulo.AgregarArticulo(articulos);
+
+                    MessageBox.Show("Agregado Exitosamente");
+
+                }
+                              
                 Close();
             }
             catch (Exception ex)
