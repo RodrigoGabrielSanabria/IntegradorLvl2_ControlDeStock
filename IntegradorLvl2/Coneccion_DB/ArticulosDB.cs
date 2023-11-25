@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
+using System.Data;
 
 namespace Conexion_DB
 {
@@ -25,7 +26,7 @@ namespace Conexion_DB
 
                 comando.CommandType = System.Data.CommandType.Text;
 
-                comando.CommandText = "SELECT Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, ImagenUrl,Precio, A.IdMarca, A.IdCategoria, A.Id from dbo.ARTICULOS A, dbo.categorias C, dbo.marcas M where M.Id=A.IdMarca and C.Id=A.IdCategoria\r\n"; //Insertar consulta
+                comando.CommandText = "SELECT Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, ImagenUrl,Precio, A.IdMarca, A.IdCategoria, A.Id from dbo.ARTICULOS A, dbo.categorias C, dbo.marcas M where M.Id=A.IdMarca and C.Id=A.IdCategoria and A.Activo=1\r\n"; //Insertar consulta
                 
                 comando.Connection = conexion;
 
@@ -79,7 +80,7 @@ namespace Conexion_DB
 
             try
             {
-                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, '" + nuevo.Precio +"', @ImagenUrl )");
+                datos.SetearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl, Activo) values('" + nuevo.CodigoArticulo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, '" + nuevo.Precio +"', @ImagenUrl, 1 )");
                 datos.setearParametro("@IdMarca", nuevo.Marcas.Id);
                 datos.setearParametro("@IdCategoria", nuevo.Categorias.Id);
                 datos.setearParametro("@ImagenUrl", nuevo.ImagenURL);
@@ -134,7 +135,44 @@ namespace Conexion_DB
         
         
         }
- 
-    
+
+        //Eliminar Fisico
+        public void Eliminar (int Id)
+        {
+
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+
+                datos.SetearConsulta("delete from ARTICULOS where id=@Id");
+                datos.setearParametro("@Id", Id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        
+        }
+
+        public void EliminarLogico(int Id)
+        {
+                        
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+
+                datos.SetearConsulta("update ARTICULOS set Activo = 0 where id = @Id");
+                datos.setearParametro("@Id", Id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        
+        }
     }
 }
