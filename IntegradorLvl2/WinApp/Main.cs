@@ -35,8 +35,7 @@ namespace WinApp
             {
                 listadoArticulo = articulosDB.Listar();
                 dgvArticulo.DataSource = listadoArticulo;
-                dgvArticulo.Columns["ImagenURL"].Visible = false;
-                dgvArticulo.Columns["Id"].Visible = false;
+                ocultarColumnas();
                 cargarImagen(listadoArticulo[0].ImagenURL);
             }
             catch(Exception ex)
@@ -46,12 +45,21 @@ namespace WinApp
 
         }
 
+        private void ocultarColumnas()
+        {
+            dgvArticulo.Columns["ImagenURL"].Visible = false;
+            dgvArticulo.Columns["Id"].Visible = false;
+        }
+
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
-            Articulos seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+            if (dgvArticulo.CurrentRow != null)
+            {
+                Articulos seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
 
-            cargarImagen(seleccionado.ImagenURL);
+                cargarImagen(seleccionado.ImagenURL);
+            }
         }
 
         private void cargarImagen(string ImagenURL)
@@ -105,6 +113,73 @@ namespace WinApp
 
         }
 
-       
+        //Eliminacion fisica y logica(Borra o desactiva completamente de la base de datos)
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+             
+
+            
+        }
+
+        //Desactiva el registro de la base de datos
+        private void Eliminar()
+        {
+            ArticulosDB articulos = new ArticulosDB();
+            Articulos seleccionado;
+
+            try
+            {
+                //Pregunta al usuario si desea eliminar o desactivar
+                DialogResult respuesta = MessageBox.Show("¿Desea eliminar o desactivar el artículo? Si = Eliminar / No = Desactivar", "Eliminando / Desactivando", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    // Eliminación física
+                    seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+                    articulos.Eliminar(seleccionado.Id);
+                    
+                }
+                else if (respuesta == DialogResult.No )
+                {
+                    // Desactivación lógica
+                    seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+                    articulos.EliminarLogico(seleccionado.Id);
+                    
+                }
+                Cargar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Articulos> listaFilfrada;
+
+            string Filtro =txbFiltro.Text;
+            // Expresion lambda (=>)si el articulo ingresado en el textBox es true guarda en x y lo carga en listafiltrada
+            // lambda = es una forma concisa de representar una función anónima o sin nombre
+
+            if (Filtro != "")
+            {
+
+                listaFilfrada = listadoArticulo.FindAll(x => x.Nombre.ToLower().Contains(Filtro.ToLower()) || x.CodigoArticulo.ToLower().Contains(Filtro.ToLower()) || x.Precio.ToString().ToLower().Contains(Filtro.ToLower()));
+
+
+            }
+            else
+            {
+                listaFilfrada = listadoArticulo;
+            }
+
+            dgvArticulo.DataSource = null;
+            dgvArticulo.DataSource = listaFilfrada;
+            ocultarColumnas();
+        }
     }
 }
