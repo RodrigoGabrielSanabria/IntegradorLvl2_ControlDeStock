@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,22 @@ namespace WinApp
         public FormArticulos()
         {
             InitializeComponent();
-           
+            
         }
 
        
         private void FormArticulos_Load(object sender, EventArgs e)
         {
             Cargar();
+         //Carga los datos en el desplegable de campo
+            cmbCampo.Items.Add("Categoria");
+            cmbCampo.Items.Add("Marca");
+            
+            
         }
 
         private List<Articulos> listadoArticulo;
+
         
         private void Cargar()
         {
@@ -71,8 +78,8 @@ namespace WinApp
             }
             catch (Exception)
             {
-
-                pbxArticulo.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
+               pbxArticulo.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
+                                    
             }
         }
 
@@ -87,17 +94,6 @@ namespace WinApp
         }
 
        
-        //Cargar codigo para barra de progreso
-        private void tsBarraProgreso_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void toolStripStatusLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Articulos seleccionado;
@@ -159,13 +155,33 @@ namespace WinApp
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ArticulosDB articulos = new ArticulosDB();
+            try
+            {
+                string campo = cmbCampo.SelectedItem.ToString();
+                string criterio = cmbCriterio.SelectedItem.ToString();
+                string filtroAv = txbFiltroAvanzado.Text;
+
+                dgvArticulo.DataSource = articulos.filtrar(campo, criterio, filtroAv);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        
+        }
+
+      
+        private void txbFiltro_TextChanged(object sender, EventArgs e)
+        {
             List<Articulos> listaFilfrada;
 
-            string Filtro =txbFiltro.Text;
+            string Filtro = txbFiltro.Text;
             // Expresion lambda (=>)si el articulo ingresado en el textBox es true guarda en x y lo carga en listafiltrada
             // lambda = es una forma concisa de representar una función anónima o sin nombre
 
-            if (Filtro != "")
+            if (Filtro.Length >= 3)
             {
 
                 listaFilfrada = listadoArticulo.FindAll(x => x.Nombre.ToLower().Contains(Filtro.ToLower()) || x.CodigoArticulo.ToLower().Contains(Filtro.ToLower()) || x.Precio.ToString().ToLower().Contains(Filtro.ToLower()));
@@ -181,5 +197,33 @@ namespace WinApp
             dgvArticulo.DataSource = listaFilfrada;
             ocultarColumnas();
         }
+
+        private void cmbCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cmbCampo.SelectedItem.ToString();
+            if (opcion == "Categoria")
+            { 
+
+                cmbCriterio.Items.Clear();  
+                cmbCriterio.Items.Add("Celulares");
+                cmbCriterio.Items.Add("Televisores");
+                cmbCriterio.Items.Add("Media");
+                cmbCriterio.Items.Add("Audio");
+
+            }
+            else
+            {
+                cmbCriterio.Items.Clear ();
+                cmbCriterio.Items.Add ("Samsung");
+                cmbCriterio.Items.Add("Apple");
+                cmbCriterio.Items.Add("Sony");
+                cmbCriterio.Items.Add("Huawey");
+                cmbCriterio.Items.Add("Motorola");
+            }
+        }
+
+        
+
+
     }
 }
