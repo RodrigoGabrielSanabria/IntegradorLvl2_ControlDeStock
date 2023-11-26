@@ -22,7 +22,8 @@ namespace Conexion_DB
             get { return lector; }
         }
 
-
+       
+        
         // Constructor sobre cargado con la conexion a la DB
         public AccesoDatos()
         {
