@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Diagnostics;
 
 namespace Conexion_DB
 {
@@ -97,10 +99,7 @@ namespace Conexion_DB
                 datos.CerrarConexion();
 
             }
-        
-        
-        
-        
+                        
         }
 
         public void ModificarArticulo(Articulos modificar) 
@@ -173,6 +172,69 @@ namespace Conexion_DB
                 throw ex;
             }
         
+        }
+
+        public List<Articulos> filtrar(string campo, string criterio, object filtro)
+        {
+            List<Articulos>lista = new List<Articulos>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                string consulta = "SELECT Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, ImagenUrl,Precio, A.IdMarca, A.IdCategoria, A.Id from dbo.ARTICULOS A, dbo.categorias C, dbo.marcas M where M.Id=A.IdMarca and C.Id=A.IdCategoria and A.Activo=1 and ";
+
+                //Comprueba los datos del desplegable, luego solo busca dentro de los items seleccionados
+                //busca por los parametros @filtro @criterio
+                if (campo == "Categoria")
+                {
+                    consulta += "A.Nombre LIKE @filtro AND C.Descripcion = @criterio";
+                }
+                else if (campo == "Marca")
+                {
+                    
+                    consulta += "C.Descripcion LIKE @filtro AND M.Descripcion = @criterio";
+                }
+
+                datos.SetearConsulta(consulta);
+                datos.setearParametro("@filtro", "%" + filtro + "%");
+                datos.setearParametro("@criterio", criterio);
+
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulos aux = new Articulos();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.CodigoArticulo = datos.Lector.GetString(0);
+                    aux.Nombre = datos.Lector.GetString(1);
+                    aux.Descripcion = datos.Lector.GetString(2);
+                    aux.Marcas = new Marcas();
+                    aux.Marcas.Id = (int)datos.Lector["IdMarca"];
+                    aux.Marcas.Descripcion = datos.Lector.GetString(3);
+                    aux.Categorias = new Categorias();
+                    aux.Categorias.Id = (int)datos.Lector["IdCategoria"];
+                    aux.Categorias.Descripcion = datos.Lector.GetString(4);
+                    if (!(datos.Lector["ImagenURL"] is DBNull)) //Se utiliza para hacer una comprobacion
+                        aux.ImagenURL = datos.Lector.GetString(5); //Para saber si el valor es nulo
+
+                    double precio;
+
+                    if (double.TryParse(datos.Lector["Precio"].ToString(), out precio))
+                    {
+                        aux.Precio = precio;
+                    }
+
+                    lista.Add(aux);
+                }
+
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
