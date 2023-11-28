@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -153,11 +154,73 @@ namespace WinApp
             }
         }
 
+        private bool validarFiltro()
+        {
+
+            if (cmbCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo para filtrar.");
+                return true;
+            }
+
+            if (cmbCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un criterio para filtrar.");
+                return true;
+            }
+
+            if (cmbCampo.SelectedIndex.ToString() == "Categoria")
+            {
+
+                if (!(soloLetras(txbFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Solo se pueden ingresar letras.");
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txbFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Debes cargar el filtro para realizar una busqueda");
+
+                    return true;
+
+
+                }
+
+
+            }
+
+            return false;
+
+        }
+
+        private bool soloLetras (string cadena) 
+        {
+            foreach(char caracter in cadena)
+            {
+                if (!char.IsLetter(caracter))
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+
+        }
+        
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ArticulosDB articulos = new ArticulosDB();
             try
             {
+                if (validarFiltro())
+
+                { 
+                    return;
+                }
+                
+                
                 string campo = cmbCampo.SelectedItem.ToString();
                 string criterio = cmbCriterio.SelectedItem.ToString();
                 string filtroAv = txbFiltroAvanzado.Text;
@@ -223,7 +286,5 @@ namespace WinApp
         }
 
         
-
-
     }
 }
