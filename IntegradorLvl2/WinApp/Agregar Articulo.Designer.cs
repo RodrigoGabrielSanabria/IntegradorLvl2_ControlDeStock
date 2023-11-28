@@ -46,6 +46,7 @@
             this.LblVistaPrevia = new System.Windows.Forms.Label();
             this.LblURLimagen = new System.Windows.Forms.Label();
             this.txbURLimagen = new System.Windows.Forms.TextBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,7 +213,7 @@
             this.LblVistaPrevia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblVistaPrevia.Location = new System.Drawing.Point(271, 1);
             this.LblVistaPrevia.Name = "LblVistaPrevia";
-            this.LblVistaPrevia.Size = new System.Drawing.Size(199, 37);
+            this.LblVistaPrevia.Size = new System.Drawing.Size(139, 25);
             this.LblVistaPrevia.TabIndex = 16;
             this.LblVistaPrevia.Text = "Vista Previa";
             this.LblVistaPrevia.UseMnemonic = false;
@@ -237,11 +238,22 @@
             this.txbURLimagen.TabIndex = 3;
             this.txbURLimagen.Leave += new System.EventHandler(this.txbURLimagen_Leave);
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(230, 156);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(28, 20);
+            this.btnAgregarImagen.TabIndex = 17;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
             // Agregar_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 371);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.txbURLimagen);
             this.Controls.Add(this.LblURLimagen);
             this.Controls.Add(this.LblVistaPrevia);
@@ -290,5 +302,6 @@
         private System.Windows.Forms.Label LblVistaPrevia;
         private System.Windows.Forms.Label LblURLimagen;
         private System.Windows.Forms.TextBox txbURLimagen;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
