@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
+using System.Data;
 
 namespace Conexion_DB
 {
@@ -107,8 +108,18 @@ namespace Conexion_DB
             try
             {
                 // Reemplaza "NombreTabla" y "CampoUsuario" y "CampoContrasena" con los nombres reales de tu tabla y columnas.
-                string consulta = $"SELECT Usuario, Contrasena FROM Users WHERE Usuario = '{usuario}' AND Contrasena = '{contrasena}'";
+                string consulta = "SELECT Usuario, Contrasena FROM Users WHERE Usuario = @usuario AND Contrasena = @contrasena";
                 SetearConsulta(consulta);
+
+                // Utiliza parámetros en lugar de concatenar la consulta para evitar SQL Injection
+                var parametroUsuario = new SqlParameter("@usuario", SqlDbType.NVarChar, 50);
+                parametroUsuario.Value = usuario;
+                AgregarParametro(parametroUsuario);
+
+                var parametroContrasena = new SqlParameter("@contrasena", SqlDbType.NVarChar, 50);
+                parametroContrasena.Value = contrasena;
+                AgregarParametro(parametroContrasena);
+
                 EjecutarLectura();
 
                 // Si el lector tiene alguna fila, entonces las credenciales son correctas.
@@ -121,6 +132,13 @@ namespace Conexion_DB
             finally
             {
                 CerrarConexion();
+            }
+        }
+        public void AgregarParametro(SqlParameter parametro)
+        {
+            if (comando != null)
+            {
+                comando.Parameters.Add(parametro);
             }
         }
 
