@@ -174,7 +174,7 @@ namespace Conexion_DB
         
         }
 
-        public List<Articulos> filtrar(string campo, string criterio, object filtro)
+        public List<Articulos> filtrar(string campo, string criterio, string filtro)
         {
             List<Articulos>lista = new List<Articulos>();
             AccesoDatos datos = new AccesoDatos();
@@ -185,20 +185,57 @@ namespace Conexion_DB
 
                 //Comprueba los datos del desplegable, luego solo busca dentro de los items seleccionados
                 //busca por los parametros @filtro @criterio
+
                 if (campo == "Categoria")
                 {
-                    consulta += "A.Nombre LIKE @filtro AND C.Descripcion = @criterio";
+                    switch (criterio)
+                    {
+                        case "Celulares":
+                            consulta += "M.Descripcion  like '" + filtro + "%'";
+                            break;
+
+                        case "Televisores":
+                            consulta += "M.Descripcion  like '" + filtro + "%'";
+                            break;
+
+                        case "Media":
+                            consulta += "M.Descripcion like '" + filtro + "%'";
+                            break;
+
+                        case "Audio":
+                            consulta += "M.Descripcion like '" + filtro + "%'";
+                            break;
+                    }
+
                 }
                 else if (campo == "Marca")
                 {
-                    
-                    consulta += "C.Descripcion LIKE @filtro AND M.Descripcion = @criterio";
+                    switch (criterio)
+                    {
+                        case "Samsung":
+                            consulta += "C.Descripcion  like '" + filtro + "%'";
+                            break;
+
+                        case "Apple":
+                            consulta += "C.Descripcion  like '" + filtro + "%'";
+                            break;
+
+                        case "Sony":
+                            consulta += "C.Descripcion  like '" + filtro + "%'";
+                            break;
+
+                        case "Huawey":
+                            consulta += "C.Descripcion  like '" + filtro + "%'";
+                            break;
+
+                        case "Motorola":
+                            consulta += "C.Descripcion  like '" + filtro + "%'";
+                            break;
+                    }
+
                 }
 
                 datos.SetearConsulta(consulta);
-                datos.setearParametro("@filtro", "%" + filtro + "%");
-                datos.setearParametro("@criterio", criterio);
-
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
