@@ -40,3 +40,7 @@ D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\Integrador
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.xml
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\EntityFramework.SqlServer.xml
 D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.Login.resources
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\WinApp.exe.manifest
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\bin\Debug\WinApp.application
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.exe.manifest
+D:\Documentos\Programación\Materia Especifica\Codigos\Git Repository\IntegradorLvl2_ControlDeStock\IntegradorLvl2\WinApp\obj\Debug\WinApp.application
