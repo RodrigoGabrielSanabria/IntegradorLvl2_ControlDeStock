@@ -138,7 +138,10 @@ namespace WinApp
                 }
                 //guardar imagen si esta subida desde el ordenador
                 if (Archivo != null && (txbURLimagen.Text.ToUpper().Contains("HTTP")))
+                {
                     File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
+                }
+                    
 
                 Close();
             }
@@ -171,15 +174,19 @@ namespace WinApp
         {
             Archivo = new OpenFileDialog();
             Archivo.Filter = "jpg|*.jpg|png|*.png";
+
             if(Archivo.ShowDialog() == DialogResult.OK)
             {
                 txbURLimagen.Text = Archivo.FileName;
                 cargarImagen(Archivo.FileName);
+
                 //guardado de imagen en una ruta especifica
                 //File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
 
             }
 
         }
+
+       
     }
 }
