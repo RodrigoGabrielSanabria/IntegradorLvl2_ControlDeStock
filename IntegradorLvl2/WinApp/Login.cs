@@ -45,13 +45,10 @@ namespace WinApp
                     MessageBox.Show("Inicio de sesión exitoso", "¡Bienvenido!");
 
                     // Cierra la ventana actual (LogIn)
-
                     this.Hide();
 
                     // Abre el formulario FormArticulos
-
                     FormArticulos formArticulos = new FormArticulos();
-
                     formArticulos.Show();
                 }
                 else
