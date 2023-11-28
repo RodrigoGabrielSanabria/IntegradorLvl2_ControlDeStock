@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Conexion_DB;
+using System.IO;
+using System.Configuration;
 
 namespace WinApp
 {
     public partial class Agregar_Articulo : Form
     {
         private Articulos articulos = null;
+        private OpenFileDialog Archivo = null;
 
         public Agregar_Articulo()
         {
@@ -133,7 +136,10 @@ namespace WinApp
                     MessageBox.Show("Agregado Exitosamente");
 
                 }
-                              
+                //guardar imagen si esta subida desde el ordenador
+                if (Archivo != null && (txbURLimagen.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
+
                 Close();
             }
             catch (Exception ex)
@@ -161,6 +167,19 @@ namespace WinApp
             }
         }
 
-        
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            Archivo = new OpenFileDialog();
+            Archivo.Filter = "jpg|*.jpg|png|*.png";
+            if(Archivo.ShowDialog() == DialogResult.OK)
+            {
+                txbURLimagen.Text = Archivo.FileName;
+                cargarImagen(Archivo.FileName);
+                //guardado de imagen en una ruta especifica
+                //File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
+
+            }
+
+        }
     }
 }
