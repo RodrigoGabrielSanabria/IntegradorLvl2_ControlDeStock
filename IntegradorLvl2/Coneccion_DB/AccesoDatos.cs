@@ -10,7 +10,7 @@ using System.Data;
 
 namespace Conexion_DB
 {
-    public class AccesoDatos
+    public class AccesoDatos 
     {
         private SqlConnection conexion;
 
