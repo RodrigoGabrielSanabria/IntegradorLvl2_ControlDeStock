@@ -169,8 +169,8 @@ namespace WinApp
                 return true;
             }
 
-            if (cmbCampo.SelectedIndex.ToString() == "Categoria")
-            {
+            //if (cmbCampo.SelectedIndex.ToString() == "Categoria")   //esta condicion daba error nunca ingresaba
+            //{
 
                 if (!(soloLetras(txbFiltroAvanzado.Text)))
                 {
@@ -188,7 +188,7 @@ namespace WinApp
                 }
 
 
-            }
+           // }
 
             return false;
 
@@ -282,9 +282,13 @@ namespace WinApp
                 cmbCriterio.Items.Add("Sony");
                 cmbCriterio.Items.Add("Huawey");
                 cmbCriterio.Items.Add("Motorola");
+
             }
         }
 
-        
+        private void txbFiltroAvanzado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

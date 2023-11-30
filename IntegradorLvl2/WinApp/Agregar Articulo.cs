@@ -137,9 +137,9 @@ namespace WinApp
 
                 }
                 //guardar imagen si esta subida desde el ordenador
-                if (Archivo != null && (txbURLimagen.Text.ToUpper().Contains("HTTP")))
+                if (Archivo != null && !(txbURLimagen.Text.ToUpper().Contains("HTTP")))
                 {
-                    File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
+                    File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.SafeFileName);
                 }
                     
 
@@ -181,12 +181,15 @@ namespace WinApp
                 cargarImagen(Archivo.FileName);
 
                 //guardado de imagen en una ruta especifica
-                //File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
+                // File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
 
             }
 
         }
 
-       
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

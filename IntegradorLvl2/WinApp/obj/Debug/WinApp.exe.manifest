@@ -97,17 +97,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>B+Vx3PiGaS1+sa9NvVjHByBaQPLYTHuBlEHJN4veq+M=</dsig:DigestValue>
+        <dsig:DigestValue>LI5JmUs3M/7kgidtlEyAoHfBSK0AJLshtQK4yfJIeHc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="WinApp.exe.config" size="1802">
+  <file name="WinApp.exe.config" size="1808">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>a+qgrObOmvgW4vxc8in3NBcYj3p4rG/5vuHYAWbOhl0=</dsig:DigestValue>
+      <dsig:DigestValue>IE84ZDNPIU1eL5vw82pVJE2Zl1aJsuEobc6J227kndU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
