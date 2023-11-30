@@ -127,29 +127,32 @@ namespace WinApp
 
             try
             {
-                //Pregunta al usuario si desea eliminar o desactivar
-                DialogResult respuesta = MessageBox.Show("¿Desea eliminar o desactivar el artículo? Si = Eliminar / No = Desactivar", "Eliminando / Desactivando", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-
-                if (respuesta == DialogResult.Yes)
+                // Pregunta al usuario si desea eliminar o desactivar
+                using (FormCustomDialog customDialog = new FormCustomDialog())
                 {
-                    // Eliminación física
-                    seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
-                    articulos.Eliminar(seleccionado.Id);
+                   
+                    DialogResult respuesta = customDialog.ShowDialog();
                     
-                }
-                else if (respuesta == DialogResult.No )
-                {
-                    // Desactivación lógica
-                    seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
-                    articulos.EliminarLogico(seleccionado.Id);
-                    
-                }
-                Cargar();
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        // Eliminación física
+                        seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+                        articulos.Eliminar(seleccionado.Id);
 
+                    }
+                    else if (respuesta == DialogResult.No)
+                    {
+                        // Desactivación lógica
+                        seleccionado = (Articulos)dgvArticulo.CurrentRow.DataBoundItem;
+                        articulos.EliminarLogico(seleccionado.Id);
+
+                    }
+                    Cargar();
+
+                }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -286,7 +289,8 @@ namespace WinApp
             }
         }
 
-        private void txbFiltroAvanzado_TextChanged(object sender, EventArgs e)
+        //Configurar ...
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
