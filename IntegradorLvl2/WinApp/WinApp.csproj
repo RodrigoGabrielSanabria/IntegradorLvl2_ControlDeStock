@@ -92,9 +92,6 @@
     <Compile Include="Agregar Articulo.Designer.cs">
       <DependentUpon>Agregar Articulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
