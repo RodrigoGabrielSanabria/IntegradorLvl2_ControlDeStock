@@ -11,6 +11,7 @@ using Dominio;
 using Conexion_DB;
 using System.IO;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace WinApp
 {
@@ -137,10 +138,10 @@ namespace WinApp
 
                 }
                 //guardar imagen si esta subida desde el ordenador
-                if (Archivo != null && !(txbURLimagen.Text.ToUpper().Contains("HTTP")))
-                {
-                    File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.SafeFileName);
-                }
+               // if (Archivo != null && !(txbURLimagen.Text.ToUpper().Contains("HTTP")))
+               // {
+               //     File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.SafeFileName);
+               // }
                     
 
                 Close();
@@ -149,6 +150,39 @@ namespace WinApp
             {
 
                MessageBox.Show(ex.ToString());
+            }
+
+            try
+            {
+                if (!ValidarCodigo(txbCodigo.Text))
+                {
+                    MessageBox.Show("Error en el código. No debe contener caracteres especiales.");
+                    return;
+                }
+
+                if (!ValidarNombre(txbNombre.Text))
+                {
+                    MessageBox.Show("Error en el nombre. No debe contener caracteres especiales ni números.");
+                    return;
+                }
+
+                if (!ValidarDescripcion(txbDescripcion.Text))
+                {
+                    MessageBox.Show("Error en la descripción. No debe contener caracteres especiales.");
+                    return;
+                }
+
+                if (!ValidarPrecio(txbPrecio.Text))
+                {
+                    MessageBox.Show("Error en el precio. No debe contener caracteres especiales ni letras.");
+                    return;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -173,23 +207,90 @@ namespace WinApp
         private void btnAgregarImagen_Click(object sender, EventArgs e)
         {
             Archivo = new OpenFileDialog();
-            Archivo.Filter = "jpg|*.jpg|png|*.png";
+            Archivo.Filter = "jpg|*.jpg|png|*.png"; //Filtro 
 
-            if(Archivo.ShowDialog() == DialogResult.OK)
+            if (Archivo.ShowDialog() == DialogResult.OK)
             {
-                txbURLimagen.Text = Archivo.FileName;
-                cargarImagen(Archivo.FileName);
+                string nombreArchivo = Path.GetFileName(Archivo.FileName);
+                string nuevoNombreArchivo = nombreArchivo;
+                int contador = 1;
 
-                //guardado de imagen en una ruta especifica
-                // File.Copy(Archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + Archivo.FileName);
+                //Si la imagen ya existe, agre "_" e incrementa el contador
+                while (File.Exists(Path.Combine(ConfigurationManager.AppSettings["images-folder"], nuevoNombreArchivo)))
+                {
+                    string nombreArchivoSinExtension = Path.GetFileNameWithoutExtension(nombreArchivo);
+                    string extension = Path.GetExtension(nombreArchivo);
+                    nuevoNombreArchivo = $"{nombreArchivoSinExtension}_{contador}{extension}";
+                    contador++;
+                }
 
+                string archivoPath = Path.Combine(ConfigurationManager.AppSettings["images-folder"], nuevoNombreArchivo);
+
+                //En el caso de que no exita, solamente copia la imagen y la guarda
+                try
+                {
+                    File.Copy(Archivo.FileName, archivoPath);
+
+                    txbURLimagen.Text = archivoPath;
+                    cargarImagen(archivoPath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"No se pudo copiar el archivo: {ex.Message}");
+                }
             }
 
-        }
+           
 
-        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+            
+
+        }
+        //-------------------------
+
+        private bool ValidarCodigo(string codigo)
         {
-
+                 
+            // Acepta solo letras y números
+            return Regex.IsMatch(codigo, "^[a-zA-Z0-9]+$");
         }
-    }
+
+        private bool ValidarNombre(string nombre)
+        {
+            foreach (char caracter in nombre)
+            {
+                if (!char.IsLetter(caracter))
+                {
+                    return false;
+                }
+
+
+            }
+            return true;
+            // No acepta caracteres especiales ni números
+            //return Regex.IsMatch(nombre, "^[a-zA-Z]+$");
+        }
+
+        private bool ValidarDescripcion(string descripcion)
+        {
+            // No acepta caracteres especiales
+            return Regex.IsMatch(descripcion, "^[a-zA-Z0-9 ]+$");
+        }
+
+        private bool ValidarUrlImagen(string urlImagen)
+        {
+            // Puedes personalizar esta validación según tus necesidades para las URLs de imágenes
+            // En este ejemplo, simplemente verifica si la cadena no está vacía
+            return !string.IsNullOrWhiteSpace(urlImagen);
+        }
+
+        private bool ValidarPrecio(string precio)
+        {
+            // No acepta caracteres especiales ni letras
+            return Regex.IsMatch(precio, "^[0-9.]+$");
+        }
+
+           
+
+
+}
 }
