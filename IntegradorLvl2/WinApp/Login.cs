@@ -8,11 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace WinApp
 {
     public partial class LogIn : Form
     {
+        public class Encrypt
+        {
+        public static string GetSHA256(string str)
+         {
+          SHA256 sha256 = SHA256Managed.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+             byte[] stream = null;
+          StringBuilder sb = new StringBuilder();
+          stream = sha256.ComputeHash(encoding.GetBytes(str));
+          for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+          return sb.ToString();
+         }
+
+        }
+      
         public LogIn()
         {
             InitializeComponent();
@@ -34,7 +50,8 @@ namespace WinApp
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;
-            string contrasena = txtContraseña.Text;
+
+            string contrasena = txtContraseña.Text;/// Encrypt.GetSHA256(txtContraseña.Text);
 
             AccesoDatos accesoDatos = new AccesoDatos();
 
@@ -64,6 +81,11 @@ namespace WinApp
             {
                 accesoDatos.CerrarConexion();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

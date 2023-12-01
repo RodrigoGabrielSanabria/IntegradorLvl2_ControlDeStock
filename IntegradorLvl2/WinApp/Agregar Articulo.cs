@@ -289,8 +289,9 @@ namespace WinApp
             return Regex.IsMatch(precio, "^[0-9.]+$");
         }
 
-           
+        private void pbxPrevia_Click(object sender, EventArgs e)
+        {
 
-
-}
+        }
+    }
 }
