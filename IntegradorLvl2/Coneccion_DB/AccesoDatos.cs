@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
 using System.Data;
+using System.Security.Cryptography;
+
 
 namespace Conexion_DB
 {
@@ -102,11 +104,29 @@ namespace Conexion_DB
         
         }
 
+
+        //Encriptación de clave en sha256
+        public class Encrypt
+        {
+            public static string GetSHA256(string str)
+            {
+                SHA256 sha256 = SHA256Managed.Create();
+                ASCIIEncoding encoding = new ASCIIEncoding();
+                byte[] stream = null;
+                StringBuilder sb = new StringBuilder();
+                stream = sha256.ComputeHash(encoding.GetBytes(str));
+                for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+                return sb.ToString();
+            }
+
+        }
         // Método para verificar las credenciales
         public bool VerificarCredenciales(string usuario, string contrasena)
         {
             try
             {
+                string contrasenaEncriptada = Encrypt.GetSHA256(contrasena);
+
                 // Reemplaza "NombreTabla" y "CampoUsuario" y "CampoContrasena" con los nombres reales de tu tabla y columnas.
                 string consulta = "SELECT Usuario, Contrasena FROM Users WHERE Usuario = @usuario AND Contrasena = @contrasena";
                 SetearConsulta(consulta);
@@ -116,8 +136,8 @@ namespace Conexion_DB
                 parametroUsuario.Value = usuario;
                 AgregarParametro(parametroUsuario);
 
-                var parametroContrasena = new SqlParameter("@contrasena", SqlDbType.NVarChar, 50);
-                parametroContrasena.Value = contrasena;
+                var parametroContrasena = new SqlParameter("@contrasena", SqlDbType.NVarChar, 200);
+                parametroContrasena.Value = contrasenaEncriptada;
                 AgregarParametro(parametroContrasena);
 
                 EjecutarLectura();
