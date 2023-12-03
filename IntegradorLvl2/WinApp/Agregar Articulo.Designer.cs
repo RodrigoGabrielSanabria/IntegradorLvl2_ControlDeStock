@@ -206,7 +206,6 @@
             this.pbxPrevia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPrevia.TabIndex = 16;
             this.pbxPrevia.TabStop = false;
-            this.pbxPrevia.Click += new System.EventHandler(this.pbxPrevia_Click);
             // 
             // LblVistaPrevia
             // 
