@@ -99,6 +99,29 @@ namespace WinApp
 
             try
             {
+                if (!ValidarCodigo(txbCodigo.Text))
+                {
+                    MessageBox.Show("No debe contener caracteres especiales.");
+                    return;
+                }
+
+                if (!ValidarNombre(txbNombre.Text))
+                {
+                    MessageBox.Show("No debe contener caracteres especiales, ni números.");
+                    return;
+                }
+
+                if (!ValidarDescripcion(txbDescripcion.Text))
+                {
+                    MessageBox.Show("No debe contener caracteres especiales y/o espacios en blanco.");
+                    return;
+                }
+
+                if (!ValidarPrecio(txbPrecio.Text))
+                {
+                    MessageBox.Show("No debe contener caracteres especiales, ni letras.");
+                    return;
+                }
                 //Uso de de la clase privada articulos. Mapea los datos para agregar y modificar
                 //Carga los datos ingresados en los texbox            
 
@@ -152,38 +175,7 @@ namespace WinApp
                MessageBox.Show(ex.ToString());
             }
 
-            try
-            {
-                if (!ValidarCodigo(txbCodigo.Text))
-                {
-                    MessageBox.Show("Error en el código. No debe contener caracteres especiales.");
-                    return;
-                }
-
-                if (!ValidarNombre(txbNombre.Text))
-                {
-                    MessageBox.Show("Error en el nombre. No debe contener caracteres especiales ni números.");
-                    return;
-                }
-
-                if (!ValidarDescripcion(txbDescripcion.Text))
-                {
-                    MessageBox.Show("Error en la descripción. No debe contener caracteres especiales.");
-                    return;
-                }
-
-                if (!ValidarPrecio(txbPrecio.Text))
-                {
-                    MessageBox.Show("Error en el precio. No debe contener caracteres especiales ni letras.");
-                    return;
-                }
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            
         }
 
         private void txbURLimagen_Leave(object sender, EventArgs e)
@@ -249,9 +241,9 @@ namespace WinApp
 
         private bool ValidarCodigo(string codigo)
         {
-                 
-            // Acepta solo letras y números
-            return Regex.IsMatch(codigo, "^[a-zA-Z0-9]+$");
+
+            // Acepta solo letras y números y no acepta espacios en blanco
+            return !string.IsNullOrWhiteSpace(codigo) && Regex.IsMatch(codigo, "^[a-zA-Z0-9]+$");
         }
 
         private bool ValidarNombre(string nombre)
@@ -272,26 +264,23 @@ namespace WinApp
 
         private bool ValidarDescripcion(string descripcion)
         {
-            // No acepta caracteres especiales
-            return Regex.IsMatch(descripcion, "^[a-zA-Z0-9 ]+$");
+            // No acepta caracteres especiales y no admite cadenas vacías
+            return !string.IsNullOrWhiteSpace(descripcion) && Regex.IsMatch(descripcion, "^[a-zA-Z0-9 ]+$");
         }
 
         private bool ValidarUrlImagen(string urlImagen)
         {
-            // Puedes personalizar esta validación según tus necesidades para las URLs de imágenes
-            // En este ejemplo, simplemente verifica si la cadena no está vacía
+           
+           
             return !string.IsNullOrWhiteSpace(urlImagen);
         }
 
         private bool ValidarPrecio(string precio)
         {
-            // No acepta caracteres especiales ni letras
-            return Regex.IsMatch(precio, "^[0-9.]+$");
+            // No acepta caracteres especiales ni letras y espacios en blanco
+            return !string.IsNullOrWhiteSpace(precio) && Regex.IsMatch(precio, "^[0-9.]+$");
         }
 
-        private void pbxPrevia_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
