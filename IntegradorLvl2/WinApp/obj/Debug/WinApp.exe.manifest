@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Coneccion_DB.dll" size="12288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Coneccion_DB.dll" size="12800">
       <assemblyIdentity name="Coneccion_DB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zIqf6tFpe6sFgi0UDxqLobIaJnAJkj3Rl/hB/vxz6Bg=</dsig:DigestValue>
+        <dsig:DigestValue>g1+dqus1GBPHBxAqs0016CN6ZGhS3BMK120DhwKojTI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinApp.exe" size="35776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinApp.exe" size="43968">
       <assemblyIdentity name="WinApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7v2CP+IhC61iW9y6VfIqsZB14VsZpzLPNqdHEinzlss=</dsig:DigestValue>
+        <dsig:DigestValue>+SeNbzG/2XOnLBdeY2nZ4qjTRE1sNrDNQYtyY9i2dMc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

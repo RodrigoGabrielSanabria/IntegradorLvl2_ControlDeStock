@@ -3,7 +3,7 @@
   <assemblyIdentity name="WinApp.application" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="WinApp" asmv2:product="WinApp" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true">
-    <deploymentProvider codebase="http://pc-gamer/WinApp/WinApp.application" />
+    <deploymentProvider codebase="http://darkking/WinApp/WinApp.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
@@ -16,7 +16,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S4gTNC6aKGJ4NA2/euG5cAnCEnCvnnXg9lLAPDXbCJo=</dsig:DigestValue>
+        <dsig:DigestValue>32eqEOUAPBRYUdYWCCudwfgoI3T32JESdmk1bleSHFQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
