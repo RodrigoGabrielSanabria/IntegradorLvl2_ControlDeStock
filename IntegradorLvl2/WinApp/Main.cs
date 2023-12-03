@@ -296,7 +296,6 @@ namespace WinApp
         {
             private Button btnEliminar;
             private Button btnDesactivar;
-            private Button btnModificar;
             private Button btnCancelar;
             private Label lblMensaje;
 
